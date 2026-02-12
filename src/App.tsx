@@ -5,6 +5,7 @@ import About from "./components/About";
 import Resume from "./components/Resume";
 import BlogsPage from "./components/BlogsPage";
 import CraftsPage from "./components/CraftsPage";
+import AnujGPT from "./components/AnujGPT";
 
 const Blogs = lazy(() => import("./components/Blogs"));
 const Crafts = lazy(() => import("./components/Crafts"));
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
             <Resume/>
           </Suspense>
         ),
+      },
+      {
+        path: "/anuj-gpt",
+        element: <AnujGPT />,
       },
     ],
   },

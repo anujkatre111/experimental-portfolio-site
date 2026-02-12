@@ -2,10 +2,53 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Environment Variables
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Local Development
+
+Create a `.env` file in the root directory:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+PORT=3002
+```
+
+### Vercel Deployment
+
+1. Go to your Vercel project dashboard
+2. Navigate to **Settings** → **Environment Variables**
+3. Add the following variable:
+   - **Name**: `GEMINI_API_KEY`
+   - **Value**: Your Gemini API key
+   - **Environment**: Production, Preview, Development (select all)
+
+The environment variables will be automatically injected at runtime. No `.env` file needed in production!
+
+## Local Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the backend server:
+   ```bash
+   npm run server
+   ```
+
+3. Start the frontend (in another terminal):
+   ```bash
+   npm run dev
+   ```
+
+## Deployment to Vercel
+
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Add the `GEMINI_API_KEY` environment variable in Vercel dashboard
+4. Deploy!
+
+The API endpoint will be available at `/api/chat` automatically.
 
 ## React Compiler
 
@@ -54,19 +97,13 @@ export default defineConfig([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
+    plugins: {
+      'react-x': reactX,
+      'react-dom': reactDom,
+    },
+    rules: {
+      ...reactX.configs.recommended.rules,
+      ...reactDom.configs.recommended.rules,
     },
   },
 ])

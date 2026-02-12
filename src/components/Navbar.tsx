@@ -15,6 +15,9 @@ const Navbar = () => {
         <Link to={"/crafts"}>
           <h1 className='text-[14px] tracking-tighter font-light text-gray-700 hover:underline'>crafts</h1>
         </Link>
+        <Link to={"/anuj-gpt"}>
+          <h1 className='text-[14px] tracking-tighter font-light text-gray-700 hover:underline'>anuj gpt</h1>
+        </Link>
       </div>
     </div>
   )
