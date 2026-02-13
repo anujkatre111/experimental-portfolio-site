@@ -80,15 +80,15 @@ const AnujGPT = () => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-200px)] max-h-[600px]">
+    <div className="flex flex-col h-[calc(100vh-180px)] sm:h-[calc(100vh-200px)] max-h-[600px] min-h-[400px]">
       <div className="mb-4">
-        <h1 className="text-[24px] tracking-tighter font-light text-gray-900 mb-2">anuj gpt</h1>
-        <p className="text-[12px] font-light tracking-tight text-gray-600">
+        <h1 className="text-[20px] sm:text-[24px] tracking-tighter font-light text-gray-900 mb-2">anuj gpt</h1>
+        <p className="text-[11px] sm:text-[12px] font-light tracking-tight text-gray-600">
           Chat with an AI version of me, customized with my personality and knowledge.
         </p>
       </div>
 
-      <div className="flex-1 overflow-y-auto border border-gray-200 rounded-lg p-4 mb-4 bg-gray-50">
+      <div className="flex-1 overflow-y-auto border border-gray-200 rounded-lg p-3 sm:p-4 mb-4 bg-gray-50">
         <div className="flex flex-col gap-4">
           {messages.map((message, index) => (
             <div
@@ -96,13 +96,13 @@ const AnujGPT = () => {
               className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-[80%] rounded-lg px-4 py-2 ${
+                className={`max-w-[85%] sm:max-w-[80%] rounded-lg px-3 py-2 sm:px-4 ${
                   message.role === 'user'
                     ? 'bg-gray-900 text-white'
                     : 'bg-white text-gray-900 border border-gray-200'
                 }`}
               >
-                <p className="text-[14px] font-light leading-relaxed whitespace-pre-wrap">
+                <p className="text-[13px] sm:text-[14px] font-light leading-relaxed whitespace-pre-wrap">
                   {message.content}
                 </p>
               </div>
@@ -130,13 +130,13 @@ const AnujGPT = () => {
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Type your message..."
-          className="flex-1 px-4 py-2 border border-red-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500 text-[14px] font-light"
+          className="flex-1 px-3 py-2 sm:px-4 border border-red-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-red-500 text-[13px] sm:text-[14px] font-light"
           disabled={isLoading}
         />
         <button
           onClick={handleSend}
           disabled={isLoading || !input.trim()}
-          className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed text-[14px] font-light transition-colors"
+          className="px-4 sm:px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed text-[13px] sm:text-[14px] font-light transition-colors"
         >
           Send
         </button>

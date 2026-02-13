@@ -5,10 +5,10 @@ const Header = () => {
     <div>
         <div className='flex flex-col gap-[8px] mb-[32px] mt-[10px]'>
             <div className='h-[18px] w-[18px] bg-[linear-gradient(45deg,_#ffffff,_#DC2626)] ml-[4px] rounded-3xl'></div>
-            <h1 className='name text-[54px] tracking-[-3px] text-red-600 font-regular mt-[8px]'>Anuj</h1>
+            <h1 className='name text-[36px] sm:text-[42px] md:text-[54px] tracking-[-3px] text-red-600 font-regular mt-[8px]'>Anuj</h1>
             <div className='flex flex-col gap-[16px]'>
-                <h1 className='text-[12px] font-light tracking-tight text-gray-600'>24-year-old <b className="text-gray-900">Software Engineer</b> from India. I build products that make life simpler and more meaningful. I care deeply about clean <b className="text-gray-900">code</b>, thoughtful <b className="text-gray-900">design</b>, and balance — a sharp mind for building, a calm mind for direction.</h1>
-                <div className='flex items-center gap-[24px]'>
+                <h1 className='text-[11px] sm:text-[12px] font-light tracking-tight text-gray-600'>24-year-old <b className="text-gray-900">Software Engineer</b> from India. I build products that make life simpler and more meaningful. I care deeply about clean <b className="text-gray-900">code</b>, thoughtful <b className="text-gray-900">design</b>, and balance — a sharp mind for building, a calm mind for direction.</h1>
+                <div className='flex flex-wrap items-center gap-[16px] sm:gap-[24px]'>
                     <div className='flex items-start gap-[6px]'> 
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-sticky-note-icon lucide-sticky-note hover:cursor-pointer"><path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8Z"/><path d="M15 3v4a2 2 0 0 0 2 2h4"/></svg>
                         <Link to={'/resume'}>

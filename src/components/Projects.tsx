@@ -7,7 +7,7 @@ type props = {
 
 const Project = ({name,description,image}:props) => {
   return (
-    <div className='w-[500px] py-[8px] hover:px-[8px] flex flex-col gap-[4px] rounded-sm hover:bg-red-50 my-[4px] hover:cursor-pointer transition-all ease-in-out hover:scale-105 group'>
+    <div className='w-full max-w-[500px] py-[8px] hover:px-[8px] flex flex-col gap-[4px] rounded-sm hover:bg-red-50 my-[4px] hover:cursor-pointer transition-all ease-in-out hover:scale-105 group'>
       <div className="flex w-full">
         <img src={image} className="w-[50px] h-[50px] object-cover rounded-sm mr-[10px]" />
             <div className="w-full">
