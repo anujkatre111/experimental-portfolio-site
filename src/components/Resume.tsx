@@ -5,7 +5,7 @@ const Resume = () => {
     <div>
         <h1 className='text-[20px] tracking-tighter'>Resume</h1>
       <iframe
-        src="/src/assets/Anuj-resume.pdf"
+        src="Anuj-resume.pdf"
         className="w-full h-[80vh]"
         title="Resume"
       />
