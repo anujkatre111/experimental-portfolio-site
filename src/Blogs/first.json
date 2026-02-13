@@ -1,16 +1,21 @@
-[{
-    "id":"1",
-    "title":"My First Blog Post",
-    "content":"This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post.This is the content of my first blog post."
- },
- {
-    "id":"2",
-    "title":"Learning JavaScript",
-    "content":"<b>JavaScript</b>is a versatile programming language used for web development."
- },
- {
-    "id":"3",
-    "title":"Understanding Asynchronous Programming",
-    "content":"Asynchronous programming allows for non-blocking operations in JavaScript."
- }]
-    
+[
+  {
+    "id": "1",
+    "title": "My First Blog Post",
+    "content": [
+      {
+        "type": "paragraph",
+        "value": "This is the introduction to my first blog post."
+      },
+      {
+        "type": "image",
+        "value": "/images/Einstein.jpg",
+        "caption": "Einstein thinking deeply"
+      },
+      {
+        "type": "paragraph",
+        "value": "This is more explanation after the image. Now content can flow naturally with text and images in any order."
+      }
+    ]
+  }
+]
