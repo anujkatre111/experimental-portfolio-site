@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { componentRegistry } from '../componentRegistry'
 import CodeBlock from './CodeBlock'
+import AnimateOnMount from './AnimateOnMount'
 
 type RegistryItem = (typeof componentRegistry)[number]
 
@@ -18,6 +19,7 @@ const CraftsPage = () => {
   const { Component, defaultProps, code, title } = componentData
 
   return (
+    <AnimateOnMount delay={0}>
     <div className="space-y-6">
       <h1 className="text-3xl font-bold">{title}</h1>
 
@@ -27,6 +29,7 @@ const CraftsPage = () => {
 
       <CodeBlock code={code} />
     </div>
+    </AnimateOnMount>
   )
 }
 

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import AnimateOnMount from './AnimateOnMount';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -80,6 +81,7 @@ const AnujGPT = () => {
   };
 
   return (
+    <AnimateOnMount delay={0}>
     <div className="flex flex-col h-[calc(100vh-180px)] sm:h-[calc(100vh-200px)] max-h-[600px] min-h-[400px]">
       <div className="mb-4">
         <h1 className="text-[20px] sm:text-[24px] tracking-tighter font-light text-gray-900 mb-2">anuj gpt</h1>
@@ -142,6 +144,7 @@ const AnujGPT = () => {
         </button>
       </div>
     </div>
+    </AnimateOnMount>
   );
 };
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { getAudioContext, unlockAudio } from '../utils/audioContext';
+import AnimateOnMount from './AnimateOnMount';
 
 const Navbar = () => {
   // Function to play click sound using Web Audio API
@@ -39,6 +40,7 @@ const Navbar = () => {
   };
 
   return (
+    <AnimateOnMount delay={0}>
     <div className='flex justify-end mt-[48px] sm:mt-[64px]'>
       <div className='flex flex-row items-center gap-[12px] sm:gap-[16px] hover:cursor-pointer'>
         <Link to={"/"} onClick={playClickSound}>
@@ -56,6 +58,7 @@ const Navbar = () => {
         </Link>
       </div>
     </div>
+    </AnimateOnMount>
   )
 }
 

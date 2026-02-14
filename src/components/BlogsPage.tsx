@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import first from '../Blogs/first.json'
+import AnimateOnMount from './AnimateOnMount'
 
 const BlogsPage = () => {
   const { id } = useParams()
@@ -8,8 +9,9 @@ const BlogsPage = () => {
     <div>
       {first
         .filter(blog => blog.id === id)
-        .map((blog) => (
-          <div key={blog.id} className='mt-[64px]'>
+        .map((blog, index) => (
+          <AnimateOnMount key={blog.id} delay={index * 50}>
+          <div className='mt-[64px]'>
             <h1 className='text-[24px] tracking-tighter mb-6'>
               {blog.title}
             </h1>
@@ -51,6 +53,7 @@ const BlogsPage = () => {
               }
             })}
           </div>
+          </AnimateOnMount>
         ))}
     </div>
   )

@@ -33,7 +33,8 @@ const MusicPlayer = () => {
   return (
     <button
       onClick={toggleMusic}
-      className='fixed top-3 right-3 sm:top-4 sm:right-4 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 text-gray-700 hover:text-red-400 transition-colors duration-300 z-50'
+      className='fixed top-3 right-3 sm:top-4 sm:right-4 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 text-gray-700 hover:text-red-400 transition-colors duration-300 z-50 animate-fade-in-up'
+      style={{ animationDelay: '200ms' }}
       aria-label={isPlaying ? 'Pause music' : 'Play music'}
     >
       {isPlaying ? (
