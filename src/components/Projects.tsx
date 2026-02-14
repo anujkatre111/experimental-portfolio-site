@@ -1,4 +1,6 @@
 
+import { getAudioContext } from '../utils/audioContext';
+
 type props = {
   name: string;
   description: string;
@@ -6,8 +8,42 @@ type props = {
 }
 
 const Project = ({name,description,image}:props) => {
+  // Magical sparkle sound on hover (requires user to have clicked navbar first - browser policy)
+  const playMagicalSound = () => {
+    try {
+      const audioContext = getAudioContext();
+      if (!audioContext || audioContext.state === 'suspended') return; // Audio not unlocked yet
+      
+      // Create ascending chime - magical sparkle effect
+      const frequencies = [880, 1100, 1320]; // Ascending notes
+      
+      frequencies.forEach((freq, i) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = freq;
+        oscillator.type = 'sine';
+        
+        const now = audioContext.currentTime + i * 0.08;
+        gainNode.gain.setValueAtTime(0, now);
+        gainNode.gain.linearRampToValueAtTime(0.15, now + 0.02);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+        
+        oscillator.start(now);
+        oscillator.stop(now + 0.25);
+      });
+    } catch (error) {
+      console.log('Audio not available');
+    }
+  };
+
   return (
-    <div className='w-full max-w-[500px] py-[8px] hover:px-[8px] flex flex-col gap-[4px] rounded-sm hover:bg-red-50 my-[4px] hover:cursor-pointer transition-all ease-in-out hover:scale-105 group'>
+    <div 
+      className='w-full max-w-[500px] py-[8px] hover:px-[8px] flex flex-col gap-[4px] rounded-sm hover:bg-red-50 my-[4px] hover:cursor-pointer transition-all ease-in-out hover:scale-105 group'
+      onMouseEnter={playMagicalSound}
+    >
       <div className="flex w-full">
         <img src={image} className="w-[50px] h-[50px] object-cover rounded-sm mr-[10px]" />
             <div className="w-full">

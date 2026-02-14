@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
+import { getAudioContext, unlockAudio } from '../utils/audioContext';
 
 const Navbar = () => {
   // Function to play click sound using Web Audio API
-  const playClickSound = () => {
+  const playClickSound = async () => {
     try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      await unlockAudio(); // Unlock audio on click so hover sounds work later
+      const audioContext = getAudioContext();
+      if (!audioContext) return;
       
       // Create a click sound - short, sharp, high frequency
       const oscillator = audioContext.createOscillator();
