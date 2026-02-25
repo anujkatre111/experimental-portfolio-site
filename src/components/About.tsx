@@ -14,13 +14,19 @@ const About = () => {
       </AnimateOnMount>
       <div className='flex flex-col gap-[12px]'>
         <AnimateOnMount delay={150}>
-          <Project name='AI Learning Assistant' description='Learning assistant made using Next.js and Gemini API' image='/images/Einstein.jpg'/>
+        <a href="https://github.com/anujkatre111/AI-Learning-Assistant" target="_blank" rel="noopener noreferrer">
+          <Project name='AI Learning Assistant' description='Learning assistant made using Next.js and Gemini API' image='/images/Einstein.jpg' inProgress={true}/>
+          </a>
         </AnimateOnMount>
         <AnimateOnMount delay={200}>
+        <a href="https://api-latency-tracker.vercel.app/" target="_blank" rel="noopener noreferrer">
           <Project name='API Latency Tracker' description='API Latency Tracker made using Next.js and Tailwind CSS' image='/images/1770991696028.png'/>
+          </a>
         </AnimateOnMount>
         <AnimateOnMount delay={250}>
-          <Project name='Meet AI' description='AI powered meeting assistant made using Next.js and Tailwind CSS' image='/images/MeetAI.png'/>
+        <a href="https://meet-ai-k6bf.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <Project name='Meet AI' description='AI powered meeting assistant made using Next.js and Tailwind CSS' image='/images/MeetAI.png'  />
+          </a>
         </AnimateOnMount>
         <AnimateOnMount delay={300}>
           <a href="https://typewriter-one-kappa.vercel.app/" target="_blank" rel="noopener noreferrer">

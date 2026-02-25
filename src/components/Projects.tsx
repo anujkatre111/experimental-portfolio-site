@@ -5,9 +5,10 @@ type props = {
   name: string;
   description: string;
   image: string;
+  inProgress?: boolean;
 }
 
-const Project = ({name,description,image}:props) => {
+const Project = ({ name, description, image, inProgress = false }: props) => {
   // Magical sparkle sound on hover (requires user to have clicked navbar first - browser policy)
   const playMagicalSound = () => {
     try {
@@ -47,11 +48,16 @@ const Project = ({name,description,image}:props) => {
       <div className="flex w-full">
         <img src={image} className="w-[50px] h-[50px] object-cover rounded-sm mr-[10px]" />
             <div className="w-full">
-              <div className='flex justify-between'>
+              <div className='flex justify-between items-start gap-2'>
                 <h1 className='text-[14px] font-light'>{name}</h1>
-        
+                <span className='flex items-center gap-1 shrink-0'>
+                  {inProgress && (
+                    <span className='text-[10px] font-medium tracking-tight text-amber-600 bg-amber-50 px-2 py-0.5 rounded'>
+                      In progress
+                    </span>
+                  )}
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="text-red-600 lucide lucide-move-up-right-icon lucide-move-up-right opacity-0 group-hover:opacity-100 transition-opacity duration-300"><path d="M13 5H19V11"/><path d="M19 5L5 19"/></svg>
-        
+                </span>
               </div>
                 <h1 className='text-[12px] font-light text-gray-700'>{description}</h1>
                     <div className='flex flex-row just'>
