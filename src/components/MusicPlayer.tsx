@@ -8,8 +8,9 @@ const MusicPlayer = () => {
   const toggleMusic = () => {
     if (!audioRef.current) {
       // Create audio element if it doesn't exist
-      audioRef.current = new Audio('/'); // Replace with your song path
+      audioRef.current = new Audio('/images/music.mp3'); // Replace with your song path
       audioRef.current.loop = true;
+      audioRef.current.volume = 0.1; // 50% volume
       
       // Handle audio events
       audioRef.current.addEventListener('ended', () => setIsPlaying(false));
