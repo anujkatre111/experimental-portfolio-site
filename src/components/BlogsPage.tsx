@@ -47,6 +47,12 @@ const BlogsPage = () => {
                       )}
                     </div>
                   )
+                  case "Video":
+                    return (
+                      <div key={index} className='my-6'>
+                        <video src={block.value} className='h-[300px] rounded-md' controls />
+                      </div>
+                    )
 
                 default:
                   return null
