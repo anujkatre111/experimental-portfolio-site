@@ -35,14 +35,8 @@ const AnujGPT = () => {
     setIsLoading(true);
 
     try {
-      // Use environment-aware API URL
-      // In production (Vercel), use relative URL /api/chat
-      // In development, use localhost:3002
-      const apiUrl = import.meta.env.PROD 
-        ? '/api/chat' 
-        : 'http://localhost:3002/api/chat';
-      
-      const response = await fetch(apiUrl, {
+      // In dev: Vite proxies /api to localhost:3002. In prod: Vercel handles /api.
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
