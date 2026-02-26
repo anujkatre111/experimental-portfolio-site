@@ -47,11 +47,11 @@ const Navbar = () => {
           <h1 className='text-[12px] sm:text-[14px] tracking-tighter font-light 
           text-gray-700 hover:underline hover:text-red-400 transition-all duration-300'>anuj</h1>
         </Link>
-        <Link to="/blogs" onClick={playClickSound}>
-            <h1 className='text-[12px] sm:text-[14px] tracking-tighter font-light text-gray-700 hover:underline hover:text-red-400 transition-all duration-300'>thoughts</h1>
-        </Link>
         <Link to={"/crafts"} onClick={playClickSound}>
           <h1 className='text-[12px] sm:text-[14px] tracking-tighter font-light text-gray-700 hover:underline'>crafts</h1>
+        </Link>
+        <Link to="/blogs" onClick={playClickSound}>
+            <h1 className='text-[12px] sm:text-[14px] tracking-tighter font-light text-gray-700 hover:underline hover:text-red-400 transition-all duration-300'>thoughts</h1>
         </Link>
         <Link to={"/anuj-gpt"} onClick={playClickSound}>
           <h1 className='text-[12px] sm:text-[14px] tracking-tighter font-light text-gray-700 hover:underline hover:text-red-400 transition-all duration-300'>anuj gpt</h1>
