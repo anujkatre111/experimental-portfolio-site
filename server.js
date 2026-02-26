@@ -63,7 +63,7 @@ app.post('/api/chat', async (req, res) => {
     
     if (!chat) {
       // Initialize model - use gemini-2.5-flash (fast and capable)
-      const model = genAI.getGenerativeModel({ model: 'models/gemini-2.5-flash' });
+      const model = genAI.getGenerativeModel({ model: 'models/gemini-2.5-flash-lite' });
       
       // Start chat with personality prompt in history
       chat = model.startChat({
