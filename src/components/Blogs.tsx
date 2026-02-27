@@ -8,7 +8,7 @@ const Blogs = () => {
   return (
     <div className='mt-[48px] sm:mt-[64px]'>
       <AnimateOnMount delay={0}>
-        <h1 className='text-[24px] sm:text-[32px] tracking-tighter'>Crafts</h1>
+        <h1 className='text-[24px] sm:text-[32px] tracking-tighter'>thoughts</h1>
       </AnimateOnMount>
       <div className='flex flex-col gap-[10px]'>
         {first.map((blog, index)=>(
