@@ -33,6 +33,11 @@ const About = () => {
             <Project name='Typewriter' description='A simple aesthetic typewriter made using Next.js' image='/images/typewriter.jpg'/>
           </a>
         </AnimateOnMount>
+        <AnimateOnMount delay={300}>
+          <a href="https://velora-gold.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <Project name='Velora' description='Aesthetic Trello Board to solve your hassle of managing your tasks' image='/images/velora2.png'/>
+          </a>
+        </AnimateOnMount>
       </div>
     </div>
   );
