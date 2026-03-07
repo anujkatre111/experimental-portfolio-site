@@ -38,6 +38,11 @@ const About = () => {
             <Project name='Velora' description='Aesthetic Trello Board to solve your hassle of managing your tasks' image='/images/velora2.png'/>
           </a>
         </AnimateOnMount>
+        <AnimateOnMount delay={300}>
+          <a href="https://ui-time-machine.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <Project name='IT Time Machine' description='Aesthetic UI Time Machine made using Next.js and Tailwind CSS' image='/images/it-time-machine.png'/>
+          </a>
+        </AnimateOnMount>
       </div>
     </div>
   );
