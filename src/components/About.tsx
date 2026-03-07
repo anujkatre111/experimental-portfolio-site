@@ -43,6 +43,11 @@ const About = () => {
             <Project name='UI Time Machine' description='Aesthetic UI Time Machine made using Next.js and Tailwind CSS' image='/images/UITime.jpeg'/>
           </a>
         </AnimateOnMount>
+        <AnimateOnMount delay={300}>
+          <a href="https://look-fast.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <Project name='BrainLag' description='Reaction time test game made using Next.js and Tailwind CSS' image='/images/Reaction.png'/>
+          </a>
+        </AnimateOnMount>
       </div>
     </div>
   );
