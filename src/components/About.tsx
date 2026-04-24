@@ -14,8 +14,8 @@ const About = () => {
       </AnimateOnMount>
       <div className='flex flex-col gap-[12px]'>
         <AnimateOnMount delay={150}>
-        <a href="https://github.com/anujkatre111/AI-Learning-Assistant" target="_blank" rel="noopener noreferrer">
-          <Project name='AI Learning Assistant' description='Learning assistant made using Next.js and Gemini API' image='/images/Einstein.jpg' inProgress={true}/>
+        <a href="https://ai-learning-assistant-tcl7.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <Project name='AI Learning Assistant' description='Learning assistant made using Next.js and Gemini API' image='/images/Einstein.jpg' inProgress={false}/>
           </a>
         </AnimateOnMount>
         <AnimateOnMount delay={200}>
